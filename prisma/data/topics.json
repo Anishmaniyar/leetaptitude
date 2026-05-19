@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Quantitative Aptitude",
+    "description": "Arithmetic, percentages, ratios, speed, profit and loss, and mathematical problem-solving concepts."
+  },
+  {
+    "title": "Logical Reasoning",
+    "description": "Pattern recognition, analytical reasoning, puzzles, sequences, and logical problem-solving."
+  },
+  {
+    "title": "Verbal Ability",
+    "description": "Grammar, vocabulary, comprehension, sentence correction, and language-based aptitude skills."
+  },
+  {
+    "title": "Data Interpretation",
+    "description": "Charts, graphs, tables, and analytical data-solving questions requiring numerical interpretation."
+  },
+  {
+    "title": "Computer Science Fundamentals",
+    "description": "Core CS concepts including operating systems, DBMS, networking, OOP, and basic programming logic."
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "title": "Percentages",
+    "description": "Questions involving percentage calculations and conversions.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Profit and Loss",
+    "description": "Problems based on profit, loss, discount, and selling price.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Ratio and Proportion",
+    "description": "Questions focused on ratios, proportions, and comparative quantities.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Time and Work",
+    "description": "Questions related to work efficiency and completion time.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Time, Speed and Distance",
+    "description": "Problems involving motion, speed, travel time, and distance calculations.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Simple Interest",
+    "description": "Questions based on simple interest calculations and formulas.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Compound Interest",
+    "description": "Problems involving compound interest growth and calculations.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Probability",
+    "description": "Questions focused on probability and chance-based outcomes.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Permutations and Combinations",
+    "description": "Problems involving arrangements, selections, and counting principles.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+  {
+    "title": "Number System",
+    "description": "Questions related to divisibility, integers, factors, and number properties.",
+    "topicTitle": "Quantitative Aptitude"
+  },
+
+  {
+    "title": "Blood Relations",
+    "description": "Logical reasoning questions involving family relationships and hierarchy.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Coding-Decoding",
+    "description": "Problems involving coded language patterns and decoding logic.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Seating Arrangement",
+    "description": "Questions based on arranging people or objects using logical constraints.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Direction Sense",
+    "description": "Problems involving directions, distances, and movement analysis.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Syllogisms",
+    "description": "Logical deduction problems using statements and conclusions.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Puzzles",
+    "description": "Complex logical arrangement and deduction-based reasoning questions.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Series and Patterns",
+    "description": "Questions involving numerical, alphabetical, and logical patterns.",
+    "topicTitle": "Logical Reasoning"
+  },
+  {
+    "title": "Logical Deduction",
+    "description": "Problems requiring analytical reasoning and conclusion derivation.",
+    "topicTitle": "Logical Reasoning"
+  },
+
+  {
+    "title": "Reading Comprehension",
+    "description": "Passage-based questions testing understanding and interpretation skills.",
+    "topicTitle": "Verbal Ability"
+  },
+  {
+    "title": "Sentence Correction",
+    "description": "Questions focused on grammar, structure, and sentence improvement.",
+    "topicTitle": "Verbal Ability"
+  },
+  {
+    "title": "Para Jumbles",
+    "description": "Problems involving arrangement of sentences into logical paragraphs.",
+    "topicTitle": "Verbal Ability"
+  },
+  {
+    "title": "Synonyms and Antonyms",
+    "description": "Vocabulary-based questions involving word meanings and opposites.",
+    "topicTitle": "Verbal Ability"
+  },
+  {
+    "title": "Error Detection",
+    "description": "Questions focused on identifying grammatical and sentence errors.",
+    "topicTitle": "Verbal Ability"
+  },
+  {
+    "title": "Vocabulary",
+    "description": "Word usage, meanings, and vocabulary enhancement questions.",
+    "topicTitle": "Verbal Ability"
+  },
+  {
+    "title": "Fill in the Blanks",
+    "description": "Sentence completion problems testing grammar and vocabulary skills.",
+    "topicTitle": "Verbal Ability"
+  },
+
+  {
+    "title": "Bar Graphs",
+    "description": "Data interpretation problems based on bar chart analysis.",
+    "topicTitle": "Data Interpretation"
+  },
+  {
+    "title": "Pie Charts",
+    "description": "Questions involving percentage and sector-based pie chart analysis.",
+    "topicTitle": "Data Interpretation"
+  },
+  {
+    "title": "Tables",
+    "description": "Data interpretation questions using tabular data sets.",
+    "topicTitle": "Data Interpretation"
+  },
+  {
+    "title": "Line Graphs",
+    "description": "Problems involving trends and analysis using line graphs.",
+    "topicTitle": "Data Interpretation"
+  },
+  {
+    "title": "Caselet DI",
+    "description": "Paragraph-based data interpretation and analytical reasoning questions.",
+    "topicTitle": "Data Interpretation"
+  },
+  {
+    "title": "Mixed Graphs",
+    "description": "Questions combining multiple graph types for analysis.",
+    "topicTitle": "Data Interpretation"
+  },
+  {
+    "title": "Data Sufficiency",
+    "description": "Logical and numerical questions testing adequacy of provided information.",
+    "topicTitle": "Data Interpretation"
+  },
+
+  {
+    "title": "Operating Systems",
+    "description": "Core concepts of processes, memory management, scheduling, and OS fundamentals.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "DBMS",
+    "description": "Database concepts including normalization, SQL, transactions, and indexing.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "Computer Networks",
+    "description": "Networking fundamentals including protocols, layers, routing, and communication.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "OOPs",
+    "description": "Object-oriented programming concepts such as inheritance and polymorphism.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "SQL Basics",
+    "description": "Basic SQL queries, joins, filtering, grouping, and database operations.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "Data Structures",
+    "description": "Core data structures such as arrays, linked lists, stacks, queues, and trees.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "Algorithms",
+    "description": "Algorithmic problem-solving concepts including sorting, searching, and recursion.",
+    "topicTitle": "Computer Science Fundamentals"
+  },
+  {
+    "title": "System Design Basics",
+    "description": "Introduction to scalable systems, architecture patterns, and backend design concepts.",
+    "topicTitle": "Computer Science Fundamentals"
+  }
+]

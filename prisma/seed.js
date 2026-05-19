@@ -1,111 +1,86 @@
 import { PrismaClient } from "@prisma/client";
+import fs from "fs";
 
 const prisma = new PrismaClient();
 
-async function main() {
-  console.log("🌱 Seeding database...");
+const topics = JSON.parse(
+  fs.readFileSync("./prisma/data/topics.json", "utf-8"),
+);
 
-  // =========================
-  // TOPIC
-  // =========================
+const subtopics = JSON.parse(
+  fs.readFileSync("./prisma/data/subtopics.json", "utf-8"),
+);
 
-  const aptitudeTopic = await prisma.topic.create({
+const questions = JSON.parse(
+  fs.readFileSync("./prisma/data/questions.json", "utf-8"),
+);
+
+for (const topic of topics) {
+  await prisma.topic.create({
     data: {
-      title: "Quantitative Aptitude",
-      description: "Arithmetic and quantitative problem solving questions",
+      title: topic.title,
+      description: topic.description,
     },
   });
-
-  // =========================
-  // SUBTOPICS
-  // =========================
-
-  const profitLoss = await prisma.subtopic.create({
-    data: {
-      title: "Profit & Loss",
-      description: "Practice questions on profit, loss and percentages",
-      topicId: aptitudeTopic.id,
-    },
-  });
-
-  const percentages = await prisma.subtopic.create({
-    data: {
-      title: "Percentages",
-      description: "Questions based on percentage calculations",
-      topicId: aptitudeTopic.id,
-    },
-  });
-
-  // =========================
-  // QUESTIONS
-  // =========================
-
-  const question1 = await prisma.question.create({
-    data: {
-      title:
-        "A shopkeeper buys an item for ₹500 and sells it for ₹600. Find the profit percentage.",
-
-      type: "MCQ",
-
-      difficulty: "EASY",
-
-      explanation: "Profit = 100, Profit % = (100 / 500) × 100 = 20%",
-
-      subtopicId: profitLoss.id,
-    },
-  });
-
-  const question2 = await prisma.question.create({
-    data: {
-      title: "What is 25% of 200?",
-
-      type: "NUMERIC",
-
-      difficulty: "EASY",
-
-      explanation: "25% of 200 = 50",
-
-      subtopicId: percentages.id,
-    },
-  });
-
-  // =========================
-  // OPTIONS (FOR MCQ)
-  // =========================
-
-  await prisma.option.createMany({
-    data: [
-      {
-        text: "10%",
-        isCorrect: false,
-        questionId: question1.id,
-      },
-      {
-        text: "15%",
-        isCorrect: false,
-        questionId: question1.id,
-      },
-      {
-        text: "20%",
-        isCorrect: true,
-        questionId: question1.id,
-      },
-      {
-        text: "25%",
-        isCorrect: false,
-        questionId: question1.id,
-      },
-    ],
-  });
-
-  console.log("✅ Database seeded successfully");
 }
 
-main()
-  .catch((e) => {
-    console.error("❌ Error while seeding:", e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
+for (const subtopic of subtopics) {
+  const existingTopic = await prisma.topic.findFirst({
+    where: {
+      title: subtopic.topicTitle,
+    },
   });
+
+  if (!existingTopic) {
+    console.log(`Topic not found: ${subtopic.topicTitle}`);
+    continue;
+  }
+
+  await prisma.subtopic.create({
+    data: {
+      title: subtopic.title,
+      description: subtopic.description,
+
+      topicId: existingTopic.id,
+    },
+  });
+}
+
+for (const question of questions) {
+  const existingSubtopic = await prisma.subtopic.findFirst({
+    where: {
+      title: question.subtopicTitle,
+    },
+  });
+
+  if (!existingSubtopic) {
+    console.log(`Subtopic not found: ${question.subtopicTitle}`);
+    continue;
+  }
+
+  // STEP 1 — Create question
+  const createdQuestion = await prisma.question.create({
+    data: {
+      title: question.title,
+      difficulty: question.difficulty,
+      type: question.type,
+      explanation: question.explanation,
+
+      subtopicId: existingSubtopic.id,
+    },
+  });
+
+  // STEP 2 — If MCQ, create options
+  if (question.type === "MCQ") {
+    for (const option of question.options) {
+      await prisma.option.create({
+        data: {
+          text: option.text,
+          isCorrect: option.isCorrect,
+
+          questionId: createdQuestion.id,
+        },
+      });
+    }
+  }
+}

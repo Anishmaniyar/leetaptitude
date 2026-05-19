@@ -1,0 +1,246 @@
+[
+  {
+    "title": "A shopkeeper buys an item for ₹500 and sells it for ₹600. Find the profit percentage.",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "Profit and Loss",
+    "explanation": "Profit = 100. Profit percentage = (100 / 500) × 100 = 20%.",
+    "options": [
+      {
+        "text": "10%",
+        "isCorrect": false
+      },
+      {
+        "text": "15%",
+        "isCorrect": false
+      },
+      {
+        "text": "20%",
+        "isCorrect": true
+      },
+      {
+        "text": "25%",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "An item is sold for ₹720 after gaining 20%. Find its cost price.",
+    "type": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "subtopicTitle": "Profit and Loss",
+    "explanation": "Cost Price = 720 / 1.2 = 600.",
+    "correctNumericAnswer": 600
+  },
+
+  {
+    "title": "What is 25% of 320?",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "Percentages",
+    "explanation": "25% of 320 = 80.",
+    "options": [
+      {
+        "text": "60",
+        "isCorrect": false
+      },
+      {
+        "text": "70",
+        "isCorrect": false
+      },
+      {
+        "text": "80",
+        "isCorrect": true
+      },
+      {
+        "text": "90",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "Find 35% of 840.",
+    "type": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "subtopicTitle": "Percentages",
+    "explanation": "35% of 840 = 294.",
+    "correctNumericAnswer": 294
+  },
+
+  {
+    "title": "If the ratio of boys to girls is 3:2 and there are 30 boys, how many girls are there?",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "Ratio and Proportion",
+    "explanation": "3 parts = 30, so 1 part = 10. Girls = 2 × 10 = 20.",
+    "options": [
+      {
+        "text": "15",
+        "isCorrect": false
+      },
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "25",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "If A:B = 5:7 and A = 45, find B.",
+    "type": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "subtopicTitle": "Ratio and Proportion",
+    "explanation": "5x = 45 => x = 9. Therefore B = 7 × 9 = 63.",
+    "correctNumericAnswer": 63
+  },
+
+  {
+    "title": "A train travels 240 km in 4 hours. Find its speed.",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "Time, Speed and Distance",
+    "explanation": "Speed = Distance / Time = 240 / 4 = 60 km/h.",
+    "options": [
+      {
+        "text": "40 km/h",
+        "isCorrect": false
+      },
+      {
+        "text": "50 km/h",
+        "isCorrect": false
+      },
+      {
+        "text": "60 km/h",
+        "isCorrect": true
+      },
+      {
+        "text": "70 km/h",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "A car covers 150 km in 3 hours. Find the average speed.",
+    "type": "NUMERIC",
+    "difficulty": "EASY",
+    "subtopicTitle": "Time, Speed and Distance",
+    "explanation": "Average speed = 150 / 3 = 50 km/h.",
+    "correctNumericAnswer": 50
+  },
+
+  {
+    "title": "If ALL MEN are mortal and John is a man, what can be concluded?",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "Syllogisms",
+    "explanation": "Since all men are mortal and John is a man, John must be mortal.",
+    "options": [
+      {
+        "text": "John is immortal",
+        "isCorrect": false
+      },
+      {
+        "text": "John is mortal",
+        "isCorrect": true
+      },
+      {
+        "text": "John is not a man",
+        "isCorrect": false
+      },
+      {
+        "text": "Cannot be determined",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "In a coding system, CAT is coded as 24. DOG is coded as 26. Find the code for BAT.",
+    "type": "NUMERIC",
+    "difficulty": "HARD",
+    "subtopicTitle": "Coding-Decoding",
+    "explanation": "Using alphabetical positions: B=2, A=1, T=20. Sum = 23.",
+    "correctNumericAnswer": 23
+  },
+
+  {
+    "title": "Choose the correctly spelled word.",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "Vocabulary",
+    "explanation": "Accommodation is the correct spelling.",
+    "options": [
+      {
+        "text": "Acommodation",
+        "isCorrect": false
+      },
+      {
+        "text": "Accomodation",
+        "isCorrect": false
+      },
+      {
+        "text": "Accommodation",
+        "isCorrect": true
+      },
+      {
+        "text": "Acommoddation",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "How many letters are there in the word 'INTERVIEW'?",
+    "type": "NUMERIC",
+    "difficulty": "EASY",
+    "subtopicTitle": "Vocabulary",
+    "explanation": "INTERVIEW contains 9 letters.",
+    "correctNumericAnswer": 9
+  },
+
+  {
+    "title": "Which SQL command is used to retrieve data from a database?",
+    "type": "MCQ",
+    "difficulty": "EASY",
+    "subtopicTitle": "SQL Basics",
+    "explanation": "SELECT is used to retrieve data from database tables.",
+    "options": [
+      {
+        "text": "INSERT",
+        "isCorrect": false
+      },
+      {
+        "text": "UPDATE",
+        "isCorrect": false
+      },
+      {
+        "text": "SELECT",
+        "isCorrect": true
+      },
+      {
+        "text": "DELETE",
+        "isCorrect": false
+      }
+    ]
+  },
+
+  {
+    "title": "How many layers are present in the OSI model?",
+    "type": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "subtopicTitle": "Computer Networks",
+    "explanation": "OSI model contains 7 layers.",
+    "correctNumericAnswer": 7
+  }
+]

@@ -8,9 +8,19 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const subtopicId = searchParams.get("subtopicId");
 
+    const page = Number(searchParams.get("page")) || 1;
+    const limit = Number(searchParams.get("limit")) || 10;
+
+    const totalQuestions = await prisma.question.count();
+
+    const totalPages = Math.ceil(totalQuestions / limit);
+    const itemsToSkip = (page - 1) * limit;
+
     const questions = await prisma.question.findMany({
-      where: {
-        subtopicId: subtopicId || undefined,
+      skip: itemsToSkip,
+      take: limit,
+      orderBy: {
+        id: "asc",
       },
       select: {
         id: true,
@@ -21,16 +31,23 @@ export async function GET(req: Request) {
           select: {
             id: true,
             text: true,
+            isCorrect: true,
           },
         },
       },
     });
 
-    const response = new ApiResponse(
-      200,
-      "Questions fetched successfully",
+    const pagination = {
+      page,
+      limit,
+      totalQuestions,
+      totalPages,
+    };
+
+    const response = new ApiResponse(200, "Questions fetched successfully", {
       questions,
-    );
+      pagination,
+    });
 
     return NextResponse.json(response, { status: 200 });
   } catch (err: any) {
