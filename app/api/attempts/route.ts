@@ -1,60 +1,32 @@
+// app/api/attempts/route.ts
 import { NextResponse } from "next/server";
 import { attemptSchema } from "@/lib/validators/attempts.validators";
-import { prisma } from "@/lib/prisma";
 import { ApiResponse } from "@/utils/apiResponse";
 import { ApiError } from "@/utils/apiError";
-import { log } from "node:console";
+import { AttemptService } from "@/services/attempt.service";
+
+const attemptService = new AttemptService();
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    // Input Validation
     const validation = attemptSchema.safeParse(body);
-
     if (!validation.success) {
       throw new ApiError(422, "Validation Error", validation.error);
     }
 
-    const data = validation.data;
+    // Delegate business operation to Service
+    const result = await attemptService.recordAttempt(validation.data);
 
-    // 1. Fetch question
-    const question = await prisma.question.findUnique({
-      where: { id: data.questionId },
-      include: { options: true },
-    });
-
-    if (!question) {
-      throw new ApiError(404, "Question not found");
-    }
-
-    // 2. Check correctness
-    let isCorrect = false;
-
-    if (data.type === "MCQ") {
-      isCorrect = question.correctOptionId === data.selectedOptionId;
-    } else {
-      isCorrect = question.correctNumericAnswer === data.numericAnswer;
-    }
-
-    // 3. Store attempt
-    const newAttempt = await prisma.attempt.create({
-      data: {
-        questionId: data.questionId,
-        selectedOptionId: data.type === "MCQ" ? data.selectedOptionId : null,
-        numericAnswer: data.type === "NUMERIC" ? data.numericAnswer : null,
-        isCorrect,
-      },
-    });
-
+    // Return Uniform HTTP Response
     return NextResponse.json(
-      new ApiResponse(201, "Attempt recorded successfully", {
-        isCorrect,
-        attemptId: newAttempt.id,
-      }),
+      new ApiResponse(201, "Attempt recorded successfully", result),
       { status: 201 },
     );
   } catch (err: any) {
-    console.log(err);
+    console.error(err);
     return NextResponse.json(
       {
         success: false,
