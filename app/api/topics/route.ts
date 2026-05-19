@@ -2,13 +2,14 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { ApiResponse } from "@/utils/apiResponse";
 import { ApiError } from "@/utils/apiError";
+import { log } from "console";
 
 export async function GET() {
   try {
     const topics = await prisma.topic.findMany({
       select: {
         id: true,
-        topic: true,
+        title: true,
         description: true,
       },
     });
@@ -21,6 +22,7 @@ export async function GET() {
 
     return NextResponse.json(response, { status: 200 });
   } catch (err) {
+    console.log(err);
     const error = new ApiError(500, "Error fetching topics");
 
     return NextResponse.json(

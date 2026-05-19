@@ -3,6 +3,7 @@ import { attemptSchema } from "@/lib/validators/attempts.validators";
 import { prisma } from "@/lib/prisma";
 import { ApiResponse } from "@/utils/apiResponse";
 import { ApiError } from "@/utils/apiError";
+import { log } from "node:console";
 
 export async function POST(request: Request) {
   try {
@@ -53,6 +54,7 @@ export async function POST(request: Request) {
       { status: 201 },
     );
   } catch (err: any) {
+    console.log(err);
     return NextResponse.json(
       {
         success: false,

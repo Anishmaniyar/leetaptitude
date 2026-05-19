@@ -1,3 +1,7 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -15,12 +19,14 @@ model User {
 model Topic {
   id        String     @id @default(uuid())
   title     String
+  description String
   subtopics Subtopic[]
 }
 
 model Subtopic {
   id        String     @id @default(uuid())
   title     String
+  description String
   topicId   String
   topic     Topic      @relation(fields: [topicId], references: [id])
   questions Question[]
@@ -28,11 +34,17 @@ model Subtopic {
 
 model Question {
   id          String     @id @default(uuid())
+
   title       String
+  explanation String
+  type        String
   difficulty  String
+
   subtopicId  String
   subtopic    Subtopic   @relation(fields: [subtopicId], references: [id])
+
   options     Option[]
+  attempts    Attempt[]
 }
 
 model Option {
@@ -44,12 +56,19 @@ model Option {
 }
 
 model Attempt {
-  id         String   @id @default(uuid())
-  userId     String
-  questionId String
-  selected   String
-  isCorrect  Boolean
-  createdAt  DateTime @default(now())
+  id                String    @id @default(uuid())
 
-  user       User     @relation(fields: [userId], references: [id])
+  userId            String?
+  questionId        String
+
+  selectedOptionId  String?
+  numericAnswer     Float?
+
+  isCorrect         Boolean
+
+  createdAt         DateTime  @default(now())
+
+  user              User?     @relation(fields: [userId], references: [id])
+
+  question          Question  @relation(fields: [questionId], references: [id])
 }
