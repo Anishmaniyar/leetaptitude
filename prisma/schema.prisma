@@ -33,18 +33,19 @@ model Subtopic {
 }
 
 model Question {
-  id          String     @id @default(uuid())
+  id                  String     @id @default(uuid())
 
-  title       String
-  explanation String
-  type        String
-  difficulty  String
+  title               String
+  explanation         String
+  type                String
+  difficulty          String
+  correctNumericAnswer Float?
 
-  subtopicId  String
-  subtopic    Subtopic   @relation(fields: [subtopicId], references: [id])
+  subtopicId          String
+  subtopic            Subtopic   @relation(fields: [subtopicId], references: [id])
 
-  options     Option[]
-  attempts    Attempt[]
+  options             Option[]
+  attempts            Attempt[]
 }
 
 model Option {

@@ -65,6 +65,7 @@ for (const question of questions) {
       difficulty: question.difficulty,
       type: question.type,
       explanation: question.explanation,
+      correctNumericAnswer: question.correctNumericAnswer !== undefined ? question.correctNumericAnswer : null,
 
       subtopicId: existingSubtopic.id,
     },

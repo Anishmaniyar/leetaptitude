@@ -16,10 +16,10 @@ export default function Home() {
           A platform focused purely on improving speed and accuracy in aptitude solving built for ambitious candidates.
         </p>
         <div className="flex items-center gap-4 mt-8">
-          <Link href="/practice" className="button-primary px-8 py-3 text-lg h-14">
+          <Link href="/topics" className="button-primary px-8 py-3 text-lg h-14">
             Start Practicing
           </Link>
-          <Link href="/login" className="button-secondary px-8 py-3 text-lg h-14">
+          <Link href="/stats" className="button-secondary px-8 py-3 text-lg h-14">
             View Analytics
           </Link>
         </div>
@@ -114,8 +114,8 @@ export default function Home() {
                   <h3 className="text-2xl text-white font-bold mb-2">Ready to improve?</h3>
                   <p className="text-[var(--text-secondary)] m-0">Join thousands of candidates passing their aptitude rounds.</p>
                </div>
-               <Link href="/signup" className="button-primary px-8 py-3 text-lg mt-6 md:mt-0 whitespace-nowrap">
-                  Create Free Account
+               <Link href="/topics" className="button-primary px-8 py-3 text-lg mt-6 md:mt-0 whitespace-nowrap">
+                  Start Practicing
                </Link>
             </CardContent>
           </Card>

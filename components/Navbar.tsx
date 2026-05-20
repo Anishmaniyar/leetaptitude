@@ -8,24 +8,16 @@ export default function Navbar() {
           <span className="text-[var(--success)]">/{'>'}</span> LeetAptitude
         </Link>
         
-        <div className="flex items-center gap-8">
-          <Link href="/explore" className="text-sm font-medium hover:text-white transition-colors block">
-            Explore
+        <div className="flex items-center gap-6 sm:gap-8">
+          <Link href="/topics" className="text-sm font-medium hover:text-white transition-colors block">
+            Topics
           </Link>
-          <Link href="/practice" className="text-sm font-medium hover:text-white transition-colors block">
-            Practice
+          <Link href="/stats" className="text-sm font-medium hover:text-white transition-colors block">
+            Stats
           </Link>
-          <Link href="/dashboard" className="text-sm font-medium hover:text-white transition-colors hidden sm:block">
-            Dashboard
+          <Link href="/recent" className="text-sm font-medium hover:text-white transition-colors block">
+            Recent Activity
           </Link>
-          <div className="flex items-center gap-3">
-            <Link href="/login" className="text-sm font-medium hover:text-white transition-colors">
-              Login
-            </Link>
-            <Link href="/signup" className="button-primary text-sm px-4 py-2">
-              Sign Up
-            </Link>
-          </div>
         </div>
       </div>
     </nav>

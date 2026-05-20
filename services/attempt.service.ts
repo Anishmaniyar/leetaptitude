@@ -25,7 +25,8 @@ export class AttemptService {
     // 2. Check correctness (Core Business Logic)
     let isCorrect = false;
     if (data.type === "MCQ") {
-      isCorrect = question.correctOptionId === data.selectedOptionId;
+      const correctOption = question.options.find(o => o.isCorrect);
+      isCorrect = correctOption ? correctOption.id === data.selectedOptionId : false;
     } else {
       isCorrect = question.correctNumericAnswer === data.numericAnswer;
     }
@@ -41,6 +42,17 @@ export class AttemptService {
     return {
       isCorrect,
       attemptId: newAttempt.id,
+      explanation: question.explanation,
     };
+  }
+
+  async getRecentAttempts(limit: number = 20) {
+    const attempts = await attemptRepo.getRecent(limit);
+    return attempts.map(att => ({
+      id: att.id,
+      questionTitle: att.question.title,
+      isCorrect: att.isCorrect,
+      timestamp: att.createdAt,
+    }));
   }
 }

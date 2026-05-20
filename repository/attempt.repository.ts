@@ -20,4 +20,20 @@ export class AttemptRepository {
       },
     });
   }
+
+  async getRecent(limit: number) {
+    return await prisma.attempt.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+      take: limit,
+      include: {
+        question: {
+          select: {
+            title: true,
+          },
+        },
+      },
+    });
+  }
 }
